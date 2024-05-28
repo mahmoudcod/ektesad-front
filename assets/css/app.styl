@@ -1,0 +1,377 @@
+@import 'util'
+
+fontFace('IBMPlexSansArabic', '~assets/font/IBMPlexSansArabic-Regular', 400, normal, eot woff2 woff, 'IBMPlexSansArabic-Regular', 'IBMPlexSansArabic-Regular')
+fontFace('IBMPlexSansArabic', '~assets/font/IBMPlexSansArabic-Bold', 900, normal, eot woff2 woff, 'IBMPlexSansArabic-Bold', 'IBMPlexSansArabic-Bold')
+
+
+.app
+  width: 100vw
+  overflow: hidden
+  position: relative
+
+body
+  background: $clBg
+  color: $clBlack
+  overflow-x: hidden
+  overflow-y: auto
+
+  &.is-home
+    background: $clWhite
+
+  *
+    outline: 0
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6
+  @extend .type-bold
+
+html, input, textarea, body, .button, .input, .textarea, .select, option, .select option
+  @extend .type-reg
+
+a
+  &:hover
+    color: $clPrimary
+
+ul, ol
+  padding: 0
+
+.page-enter-active, .page-leave-active
+  transition: opacity 0.5s
+
+.page-enter, .page-leave-active
+  opacity: 0
+
+h1, .h1
+  font-size: unitRes(22, 24)
+
+h2, .h2
+  font-size: unitRes(18, 20)
+
+h3, .h3
+  font-size: unitRes(16, 18)
+
+h4, .h4
+  font-size: unitRes(14, 16)
+
+h5, .h5
+  font-size: unitRes(12, 14)
+
+h6, .h6
+  font-size: unitRes(10, 12)
+
+.icon
+  width: 1em
+  height: 1em
+  fill: $clBlack
+
+.button
+  &.is-static
+    padding: 0 0.5em
+    height: 40px
+    line-height: 36px
+
+  &.is-wide
+    padding-right: 2em
+    padding-left: 2em
+
+  .icon
+    fill: inherit
+
+  &.is-loading
+    color: transparent !important
+    pointer-events: none
+
+    &:after
+      animation: spinAround 0.5s infinite linear
+      border: 2px solid #dbdbdb
+      border-radius: 290486px
+      border-right-color: transparent
+      border-top-color: transparent
+      content: ''
+      display: block
+      height: 1em
+      position: relative
+      width: 1em
+      left: calc(50% - (1em / 2))
+      top: calc(50% - (1em / 2))
+      position: absolute
+      margin: -2px 0 0 -2px
+
+  &.is-static
+    padding: 0 0.5em
+    height: 40px
+    line-height: 40px
+
+@keyframes spinAround
+  from
+    transform: rotate(0deg)
+
+  to
+    transform: rotate(359deg)
+
+.checkbox-input, .radio-input
+  border-width: $border
+
+.radio-input:after
+  width: 65%
+  height: 65%
+
+.grid, .row
+  margin-right: unitRes(-10, -20)
+  margin-left: unitRes(-10, -20)
+
+
+  .column
+    padding-right: unitRes(10, 20)
+    padding-left: unitRes(10, 20)
+
+    &.has-mb
+      margin-bottom: unitRes(10, 20)
+
+
+.grid
+  &.is-tiny
+    margin-right: -5px
+    margin-left: -5px
+
+    .column
+      padding-right: 5px
+      padding-left: 5px
+      margin-bottom: 10px
+      &.hasnt-pr
+        padding-left: 0px
+
+
+
+  &.is-products
+    +mq($until: 400px)
+      .column
+        width: 100% !important
+        flex: 0 0 100% !important
+
+.input
+  border-color: $clBorder
+  background-color: transparent
+
+  &-label
+    display: block
+    margin-bottom: 5px
+
+  &.has-error
+    border-color: $clDanger
+    margin-bottom: 0
+
+  &-message
+    color: $clDanger
+    margin-bottom: 10px
+    font-size: 14px
+    margin: 3px 0 5px
+    display: block
+
+  &:focus
+    border-color: $clBlack
+
+.textarea
+  border-color: $clBorder
+  background-color: transparent
+
+  &.is-rounded
+    border-radius: $borderRadius-lg
+
+  &:focus
+    border-color: $clBlack
+
+.socialButtons
+  display: flex
+  margin: 0 -10px 30px
+  flex-wrap: wrap
+
+  .button
+    flex: auto
+    margin: 10px
+
+    &.is-facebook
+      background: #4f6ca7
+      border-color: #4f6ca7
+
+      .icon
+        background: $clWhite
+        width: 26px
+        height: 26px
+        padding: 5px
+        border-radius: 20em
+        fill: #4f6ca7
+
+    &.is-twitter
+      background: #00aeef
+      border-color: #00aeef
+
+      .icon
+        background: $clWhite
+        width: 26px
+        height: 26px
+        padding: 5px
+        border-radius: 20em
+        fill: #00aeef
+
+    .icon
+      font-size: 20px
+
+.whiteBox
+  background: $clWhite
+  box-shadow: $boxShadow
+  padding: unitRes(30, 60)
+  border-radius: 4px
+
+  &.is-small
+    padding: unitRes(20, 40)
+
+  &.is-flex
+    display: flex
+    align-items: center
+    justify-content: space-between
+    background: none
+    flex-wrap: wrap
+
+  &.is-equal
+    height: 100%
+
+.select
+  background-image: linear-gradient(45deg, transparent 50%, $clBorder 50%), linear-gradient(135deg, $clBorder 50%, transparent 50%)
+  background-position: calc(20px - 0.78em) calc(50% + 0.1em), calc(20px - 0.4em) calc(50% + 0.1em)
+  background-size: 0.4em 0.4em, 0.4em 0.4em
+  background-color: transparent
+  border-color: $clBorder
+  margin-bottom: 10px
+
+  &.is-static
+    padding: 0 0.5em
+    height: 40px
+    line-height: 40px
+
+.textarea
+  background-color: transparent
+
+.input.is-rounded, .inputGroup.is-rounded >.input
+  border-width: 2px
+  border-radius: 2em
+
+.input
+  &.is-static
+    padding: 0 0.5em
+    height: 40px
+    line-height: 40px
+
+  &.is-textarea
+    min-width: 100%
+    max-width: 100%
+
+  &.is-white
+    color: $clWhite
+
+    &:focus
+      border-color: $clPrimary
+
+    +placeholder()
+      color: $clWhite
+
+.checkbox-input, .radio-input
+  border-color: $clBorder
+
+.checkbox-input:checked, .radio-input:checked
+  background: $clPrimary
+  border-color: $clPrimary
+
+.radio-input:after
+  background: $clWhite
+  opacity: 0.5
+
+.linksList
+  list-style-type: none
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  margin: 0 -20px
+
+  li
+    margin: 0 20px 10px
+
+  a
+    border-radius: 10em
+    display: block
+    transition: 200ms
+
+    &.is-active
+      padding: 5px 30px
+      background: $clPrimary
+      color: $clWhite
+
+.dropzone
+  background: none
+  @extend .type-reg
+
+.apexcharts-canvas
+  direction: ltr
+
+.apexcharts-zoom-icon svg, .apexcharts-zoom-in-icon svg, .apexcharts-zoom-out-icon svg, .apexcharts-reset-zoom-icon svg, .apexcharts-download-icon svg
+  fill: #fff
+
+.apexcharts-selection-icon svg
+  fill: #fff
+  transform: scale(0.86)
+
+.apexcharts-zoom-icon.selected svg, .apexcharts-selection-icon.selected svg, .apexcharts-reset-zoom-icon.selected svg
+  fill: #fbb040
+
+.apexcharts-selection-icon:not(.selected):hover svg, .apexcharts-zoom-icon:not(.selected):hover svg, .apexcharts-zoom-in-icon:hover svg, .apexcharts-zoom-out-icon:hover svg, .apexcharts-reset-zoom-icon:hover svg
+  fill: #fbb040
+
+.alert-block
+  display: block
+  position: fixed
+  bottom: 10px
+  right: 10px
+  z-index: 9999
+  padding: 20px
+
+.alert-block-top
+  display: block
+  position: absolute
+  top: 10%
+  right: 18%
+  padding: 20px
+  font-weight: 700
+
+
+
+
+
+.content
+  h1
+    font-size: 1.8em !important;
+  h2
+    font-size: 1.4em !important;
+    background-color: $clPrimary
+    padding: unitRes(10, 20)
+    color: #ffff
+    margin-top: unitRes(20, 30) !important
+    margin-bottom: unitRes(20, 30) !important
+    display: inline-block
+  h3
+    font-size: 1.2em !important;
+    position: relative
+    &:before
+      color: $clSecondary;
+      border-right: 15px solid;
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+      display: inline-block;
+      content: '';
+      position: absolute;
+      right: -20px;
+      top: 5px;
+  h4
+    font-size: 1em !important;
+  h5
+    font-size: 0.8em !important;
+  h6
+    font-size: 0.6em !important;

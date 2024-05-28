@@ -1,0 +1,146 @@
+
+html[lang='ar-Eg']
+  direction: rtl
+  font-family:  "IBMPlexSansArabic", sans-serif;
+
+  body, .button, .input
+    direction: rtl
+    font-family: "IBMPlexSansArabic", sans-serif;
+
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .button, input, textarea
+    font-family:  "IBMPlexSansArabic", sans-serif;
+
+  .type-reg, .type-bold
+    font-family:  "IBMPlexSansArabic", sans-serif;
+
+  .button .icon:first-child:not(:last-child)
+    margin-right: 0
+    margin-left: 0.25em
+
+  .select
+    text-align: right
+    background-image: linear-gradient(45deg, transparent 50%, $clBorder 50%), linear-gradient(135deg, $clBorder 50%, transparent 50%)
+    background-position: calc(20px - 0.78em) calc(50% + 0.1em), calc(20px - 0.4em) calc(50% + 0.1em)
+    background-size: 0.4em 0.4em, 0.4em 0.4em
+
+  .table
+    text-align: right
+
+  .number-input .button:first-child
+    border-radius: 0 10em 10em 0
+
+  .number-input .button:last-child
+    border-radius: 10em 0 0 10em
+
+  .cart-item-thumb
+    margin-right: 0
+    margin-left: 20px
+
+    +mq($until: 'tablet')
+      margin-left: 0
+
+  .orderCard-body-item-thumb
+    margin-right: 0
+    margin-left: 20px
+
+  .checkbox.is-inline, .radio.is-inline
+    margin-right: 0
+    margin-left: 0.8em
+
+  .checkbox-input, .radio-input
+    margin-right: 0
+    margin-left: 0.4em
+
+  .intro-icon
+    right: auto
+    left: -635px
+
+  .provider-icon
+    right: auto
+    left: -1600px
+
+    +mq($until: 'ultrawide')
+      right: auto
+      left: -1200px
+
+    +mq($until: 'widescreen')
+      right: auto
+      left: -1100px
+
+    +mq($until: 'desktop')
+      right: auto
+      left: -950px
+
+  .appDownload .icon
+    margin: 0 0 1px 5px
+
+  .reviewBox-thumb
+    margin-right: 0
+    margin-left: 10px
+
+  .orderCard
+    &-item
+      &-thumb
+        margin-right: 0
+        margin-left: 20px
+
+    &-footer
+      .icon
+        margin-right: 0
+        margin-left: 5px
+
+  .cart
+    &-item
+      &-thumb
+        margin-right: 0
+        margin-left: 20px
+
+  .processesCard
+    &-info
+      span
+        margin-right: 0
+        margin-left: 10px
+
+  .reviewBox
+    &-thumb
+      margin-right: 0
+      margin-left: 10px
+
+  .notifications
+    &-list
+      &-icon
+        margin-right: 0
+        margin-left: 20px
+
+  .shop
+    &-location, &-num, &-time
+      .icon
+        margin-right: 0
+        margin-left: 20px
+
+    &-time
+      .icon
+        margin-right: 0
+        margin-left: 10px
+
+  .myProducts
+    &-header
+      &-actions
+        .button
+          margin-left: 0
+          margin-right: 20px
+
+  .rating-colored
+    left: auto
+    right: 0
+
+  .star-rating-add > fieldset
+    direction: rtl
+
+  .star-rating-add > fieldset:not(:checked) > label
+    float: left
+    direction: rtl
+
+  .star-rating-add > fieldset label:not(:last-child)
+    border-right: 2px solid #dadaed
+    border-left: 0
