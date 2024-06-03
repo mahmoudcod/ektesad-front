@@ -9,6 +9,7 @@ export const GET_SETTINGS = gql`
       twitter
       email
       phone
+      appLogo
     }
   }
 `;

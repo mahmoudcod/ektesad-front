@@ -29,14 +29,16 @@ var corsOption = {
 app.use(cors(corsOption));
 if (process.env.NODE_ENV === "development") {
   console.log("Environment is development");
-  mongoose.connect(
-    `mongodb://${process.env.DB_USER}:${
-      process.env.DB_PASS
-    }@ds133041.mlab.com:33041/${process.env.DB}`,
-    {
-      useNewUrlParser: true
-    }
-  );
+  mongoose
+    .connect(
+      process.env.DB_HOST,
+      {
+        // useNewUrlParser: true,
+        user: process.env.DB_USER,
+        pass: process.env.DB_PASS
+        // useUnifiedTopology: true
+      }
+    )
   const connection = mongoose.connection;
   connection
     .on("error", () => console.log(" :( Connection Failed"))

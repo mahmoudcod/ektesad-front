@@ -43,7 +43,7 @@ typings/
 
 # Optional npm cache directory
 .npm
-
+.env
 # Optional eslint cache
 .eslintcache
 
@@ -89,3 +89,4 @@ sw.*
 *.swp
 
 upload.txt
+package-lock.json

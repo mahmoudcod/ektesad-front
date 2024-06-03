@@ -17,6 +17,7 @@ module.exports = {
               twitter
               email
               phone
+              appLogo
             }
           }
         `

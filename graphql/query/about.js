@@ -6,6 +6,9 @@ export const GET_ABOUT = gql`
       vision
       description
       mission
+      usage
+      privacy
+      mediaCh
       video {
         url
       }
